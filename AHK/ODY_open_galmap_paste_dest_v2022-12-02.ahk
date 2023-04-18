@@ -13,7 +13,7 @@ vGalmapKey := "F9"
 vUIPanelUp := "W"
 ;general -> interface mode -> ui panel right   [check no conflicts in general -> galaxy map!]
 vUIPanelRight := "D"
-;general -> interface mode -> GalMap Left   
+;general -> interface mode -> GalMap Left      [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation]
 vUIGalMapLeft := "H"
 
 ; #############################################################################
