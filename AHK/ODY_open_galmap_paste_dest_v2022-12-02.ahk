@@ -1,7 +1,7 @@
 
 ; #############################################################################
-; #### Elite:Dangerous Auto-Plotter - Odyssey Version  ########################
-; #### v2022-12-02_Added WIGGLE to GalMap - to re-acquire target star #########
+; #### Elite:Dangerous Auto-Plotter - Odyssey Version 2  ######################
+; #### v2023-04-18_Added WIGGLE to GalMap - to re-acquire target star #########
 ; #############################################################################
 
 ; #############################################################################
@@ -13,26 +13,28 @@ vGalmapKey := "F9"
 vUIPanelUp := "W"
 ;general -> interface mode -> ui panel right   [check no conflicts in general -> galaxy map!]
 vUIPanelRight := "D"
-;general -> interface mode -> GalMap Left      [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation...typically 'A']
-vUIGalMapLeft := "H"
+;general -> interface mode -> GalMap Left      [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation]
+vUIGalMapLeft := "A"
+;general -> [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation]
+vUIGalMapTurn := "H"
 
 ; #############################################################################
 ; #### DELAYS #################################################################
 ; #############################################################################
 
-vInitDelay := 1100
+vInitDelay := 1250
 vGalmapDelay := 3000
-vKeyDelay := 125
+vKeyDelay := 150
 vMediumDelay := 400
-vPasteDelay := 200
+vPasteDelay := 400
 vPlotDelay := 800
 vWiggle := 50
 
 ; #############################################################################
 
 SendMode Input
-SetWinDelay 0
-SetKeyDelay 50
+SetWinDelay 10
+SetKeyDelay 75
 
 ; #### Change preferred AHK Trigger Key at first character in next line #######
 `::
@@ -49,7 +51,7 @@ PressKey("Down",vKeyDelay)
 PressKey("Space",vKeyDelay)
 PressKey("Backspace",vKeyDelay)
 sleep vGalmapDelay
-PressKey(vUIGalMapLeft,vWiggle)
+PressKey(vUIGalMapTurn,vWiggle)
 PressKey("Space",vPlotDelay)
 sleep vMediumDelay
 PressKey(vGalmapKey,vKeyDelay)
@@ -63,6 +65,3 @@ PressKey(key, time)
 	Sleep, %time%
 	Return
 }
-
-
-
