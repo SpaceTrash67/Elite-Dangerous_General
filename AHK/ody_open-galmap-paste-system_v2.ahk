@@ -1,7 +1,8 @@
 
 ; #############################################################################
-; #### Elite:Dangerous Auto-Plotter - Odyssey Version 2  ######################
-; #### v2023-04-18_Added WIGGLE to GalMap - to re-acquire target star #########
+; #### Elite:Dangerous Auto-Plotter - Odyssey Version 3  ######################
+; # v3: 2024-06-30_Corrections for Updated Bindings  ##########################
+; # v2: 2023-04-18_Added WIGGLE to GalMap - to re-acquire target star #########
 ; #############################################################################
 
 ; #############################################################################
@@ -13,10 +14,10 @@ vGalmapKey := "F9"
 vUIPanelUp := "W"
 ;general -> interface mode -> ui panel right   [check no conflicts in general -> galaxy map!]
 vUIPanelRight := "D"
-;general -> interface mode -> GalMap Left      [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation]
-vUIGalMapLeft := "A"
-;general -> [I use WASD for GalMap rotations - so UHJK for GalMap cursor navigation]
-vUIGalMapTurn := "H"
+;general -> interface mode -> GalMap Translate Left [I use WASD for GalMap rotations - so YGHJ for GalMap cursor translation navigation]
+vUIGalMapTransLeft := "G"
+;general -> interface mode -> GalMap Translate Backwards [I use WASD for GalMap rotations - so YGHJ for GalMap cursor translation navigation]
+vUIGalMapTransBack := "H"
 
 ; #############################################################################
 ; #### DELAYS #################################################################
@@ -51,7 +52,7 @@ PressKey("Down",vKeyDelay)
 PressKey("Space",vKeyDelay)
 PressKey("Backspace",vKeyDelay)
 sleep vGalmapDelay
-PressKey(vUIGalMapTurn,vWiggle)
+PressKey(vUIGalMapTurnLeft,vWiggle)
 PressKey("Space",vPlotDelay)
 sleep vMediumDelay
 PressKey(vGalmapKey,vKeyDelay)
